@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Adoption Agency{% endblock %}
+
+{% block content %}
+    {% for pet in pets %}
+    <a href="/{{ pet.id }}">
+        <div style="display: inline-block">
+        <img height="100px" width="100px" src="{{ pet.photo_url }}">
+        <p style="font-size: 11px">{{pet.name}} is 
+            {% if pet.available %}
+                <b>available!</b>
+            {% else %}
+                unavailable
+            {% endif %}
+        </p>
+    </div>
+    </a>
+    {% endfor %}
+
+    <a href="/add">Add a Pet</a>
+
+{% endblock %}
