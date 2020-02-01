@@ -7,7 +7,7 @@
     <a href="/{{ pet.id }}">
         <div style="display: inline-block">
         <img height="100px" width="100px" src="{{ pet.photo_url }}">
-        <p style="font-size: 11px">{{pet.name}} is 
+        <p style="font-size: 11px">{{pet.name}} is
             {% if pet.available %}
                 <b>available!</b>
             {% else %}
@@ -19,5 +19,18 @@
     {% endfor %}
 
     <a href="/add">Add a Pet</a>
+
+
+    <div class="petfinder">
+        <h2>Random Petfinder Pet</h2>
+        <div><img src="{{ petfinder.photourl }}"></div>
+        <div>
+            <p>Name: {{ petfinder.name }}</p>
+            <p>Species: {{ petfinder.species }}</p>
+            <p>Age: {{ petfinder.age }}</p>
+            <p>Description: {{ petfinder.description }}</p>
+            <p>Status: {{ petfinder.status }}</p>
+        </div>
+    </div>
 
 {% endblock %}

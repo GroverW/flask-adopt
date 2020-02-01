@@ -10,24 +10,25 @@
         <div>
             <p>Name: {{ pet.name }}</p>
             <p>Age:
-                    {% if pet.age %} 
+                    {% if pet.age %}
                         {{pet.age}}
                     {% else %}
                         Unknown
                     {% endif %}
             </p>
-            <p>Species: {% if pet.species %} 
+            <p>Species:
+                {% if pet.species %}
                     {{pet.species}}
                 {% else %}
                     Unknown
                 {% endif %}</p>
         </div>
     </div>
-    
+
     <form id="edit-pet-form" method="POST">
         {{ form.hidden_tag() }}
 
-        
+
         {% for field in form
             if field.widget.input_type != 'hidden' %}
 

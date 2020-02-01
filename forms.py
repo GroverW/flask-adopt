@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, TextAreaField, SelectField, RadioField
+from wtforms import StringField, IntegerField, TextAreaField, SelectField, BooleanField
 from wtforms.validators import InputRequired, Optional, URL, NumberRange
 
 
@@ -27,7 +27,4 @@ class EditPetForm(FlaskForm):
                                         Optional(),
                                         URL()])
     notes = StringField('Notes')
-    available = RadioField("Available", choices=[
-                                        (True, 'Yes'),
-                                        (False, 'No')],
-                                        coerce='unicode')
+    available = BooleanField('Available?')
